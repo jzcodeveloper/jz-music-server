@@ -12,6 +12,7 @@
   "dependencies": {
     "cloudinary": "^1.16.0",
     "colors": "^1.4.0",
+    "config": "^3.2.3",
     "express": "^4.17.1",
     "mongoose": "^5.7.11",
     "music-metadata": "^4.8.2"

@@ -1,0 +1,10 @@
+{
+  "mongoURI": "mongodb://localhost:27017/jz-music-player-offline",
+  "mongoHost": "",
+  "mongoDB": "",
+  "mongoUser": "",
+  "mongoPass": "",
+  "cloudinaryName": "",
+  "cloudinaryApiKey": "",
+  "cloudinaryApiSecret": ""
+}

@@ -5,12 +5,13 @@ const mm = require("music-metadata");
 const fs = require("fs");
 const path = require("path");
 const cloudinary = require("cloudinary");
+const config = require("config");
 const { execSync } = require("child_process");
 
 cloudinary.config({
-  cloud_name: "",
-  api_key: "",
-  api_secret: ""
+  cloud_name: config.get("cloudinaryName"),
+  api_key: config.get("cloudinaryApiKey"),
+  api_secret: config.get("cloudinaryApiSecret")
 });
 
 const Song = require("../models/Song");
@@ -178,10 +179,10 @@ router.get("/database", async (req, res) => {
         const opath = "D:\\Program Files\\MongoDB\\Server\\4.0\\bin";
 
         const dump = {
-          host: "ds033484.mlab.com:33484",
-          db: "jz-music-player",
-          user: "Javier",
-          pass: "jzmp123",
+          host: config.get("mongoHost"),
+          db: config.get("mongoDB"),
+          user: config.get("mongoUser"),
+          pass: config.get("mongoPass"),
           dpath: path.join(__dirname, "../dump")
         };
 

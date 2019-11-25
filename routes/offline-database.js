@@ -2,6 +2,7 @@ require("colors");
 const express = require("express");
 const mm = require("music-metadata");
 const fs = require("fs");
+const config = require("config");
 const router = express.Router();
 //const { execSync } = require("child_process");
 
@@ -179,10 +180,10 @@ router.get("/offline-database", async (req, res) => {
 
           //Using mongorestore command
           const restore = {
-            host: "ds033484.mlab.com:33484",
-            db: "jz-music-player",
-            user: "Javier",
-            pass: "jzmp123"
+            host: config.get("mongoHost"),
+            db: config.get("mongoDB"),
+            user: config.get("mongoUser"),
+            pass: config.get("mongoPass"),
           };
 
           const restoreCommand = `mongorestore -h ${restore.host} -d ${
