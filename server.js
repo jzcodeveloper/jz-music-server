@@ -19,7 +19,9 @@ app.use("/", require("./routes/dump"));
 mongoose
   .connect(db, {
     useNewUrlParser: true,
-    useFindAndModify: false
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
   })
   .then(() => console.log("MongoDB Connected".green))
   .catch(err => console.log("Could not connect to MongoDB".red));
