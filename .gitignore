@@ -1,0 +1,6 @@
+/node_modules
+/dump
+/music
+package-lock.json
+/config/production.json
+thingsToDo.txt
